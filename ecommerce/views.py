@@ -200,7 +200,7 @@ def paymentPage(request, payment_option):
     order.save()
     if payment.verified:
         payment.verified = True
-        messages.error(request, f'Payment SUccessful')
+        messages.success(request, f'Payment SUccessful')
         return redirect('dashboard')
 
     return render(request,'stores/payment.html',{'payment':payment,'order':order})
